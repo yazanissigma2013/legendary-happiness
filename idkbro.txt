@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnblockedHub Games</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #222;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 5px;
+            background-color: #444;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        main {
+            padding: 1rem;
+            flex-grow: 1; /* Allows main to take up remaining space */
+        }
+
+        .proxy-container {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #333;
+        }
+
+        .proxy-container input[type="text"] {
+            width: 80%;
+            padding: 8px;
+            margin-right: 10px;
+            border: 1px solid #555;
+            background-color: #444;
+            color: white;
+        }
+
+        .proxy-container button {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .game-card {
+            background-color: #222;
+            border: 1px solid #555;
+            border-radius: 5px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .game-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        #welcome-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
+        }
+
+        #welcome-message button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>UnblockedHub Games</h1>
+    </header>
+
+    <nav>
+        <a href="#games">Games</a>
+        <a href="#proxy">Proxy</a>
+    </nav>
+
+    <main>
+        <section id="welcome-message">
+            <p>YAZAN MADE THIS PROXY</p>
+            <button onclick="hideWelcome()">Enter</button>
+        </section>
+
+        <section id="proxy">
+            <h2>Proxy</h2>
+            <div class="proxy-container">
+                <input type="text" id="proxy-search" placeholder="Enter your search query">
+                <button onclick="searchWithProxy()">Search</button>
+            </div>
+            <div id="proxy-results">
+                <!-- Proxy results will be displayed here -->
+            </div>
+        </section>
+
+        <section id="games">
+            <h2>Games</h2>
+            <div class="game-grid">
+                <!--  Game cards will go here  -->
+                <div class="game-card">
+                    <img src="placeholder.png" alt="Game 1" width="200" height="150">
+                    <h3>Game 1</h3>
+                    <p>Description of Game 1.</p>
+                    <button>Play</button>
+                </div>
+                <!-- More game cards -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 UnblockedHub Games.  This is a placeholder and does not contain a working proxy or copyrighted games.
+        </p>
+    </footer>
+
+    <script>
+        function hideWelcome() {
+            document.getElementById('welcome-message').style.display = 'none';
+        }
+
+        function searchWithProxy() {
+            const searchQuery = document.getElementById('proxy-search').value;
+            const proxyResultsDiv = document.getElementById('proxy-results');
+
+            proxyResultsDiv.innerHTML = `<p>Searching for: ${searchQuery} (Proxy functionality not implemented in this
+                example)</p>`;
+
+            // In a real implementation:
+            // 1. You would use JavaScript to send a request to your proxy server.
+            // 2. The proxy server would fetch the content from DuckDuckGo.
+            // 3. The proxy server would return the results, which you would then display in proxyResultsDiv.
+            // 4. You would need to handle the display of the content.
+        }
+    </script>
+</body>
+
+</html>
